@@ -22,6 +22,9 @@ namespace TecBankBackend.Services
         // method that returns the client with the given id
         public static Client Get(int id) => Clients.FirstOrDefault(p => p.Id == id);
 
+        // method that returns the client with the given username
+        public static Client Get(string username) => Clients.FirstOrDefault(p => p.Username == username);
+
         // method that adds the client given in the request to the clients list
         public static void Add(Client client)
         {

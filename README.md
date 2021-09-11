@@ -60,8 +60,8 @@ retorna los clientes por medio de un JSON, por ejemplo:
 
 2) Get one client by id:
 
-Para esta se debe usarla action GET de http con la url http://localhost:5000/client/id
-donde id es un numero de id valido retorna el cliente por medio de un JSON, por ejemplo:
+Para esta se debe usarla action GET de http con la url http://localhost:5000/client/id/#
+donde # es un numero de id valido retorna el cliente por medio de un JSON, por ejemplo:
 
 {
     "id": 1,
@@ -84,7 +84,33 @@ donde id es un numero de id valido retorna el cliente por medio de un JSON, por 
     }
 }
 
-3) Post one client
+3) Get one client by username:
+
+Para esta se debe usarla action GET de http con la url http://localhost:5000/client/username/usr
+donde usr es un string del username valido retorna el cliente por medio de un JSON, por ejemplo:
+
+{
+    "id": 1,
+    "username": "juanignava",
+    "password": "1234",
+    "clientType": "legal",
+    "monthlyIncome": 1000,
+    "name": {
+        "firstName": "Juan",
+        "secondName": "Ignacio",
+        "lastName1": "Navarro",
+        "lastName2": "Navarro"
+    },
+    "adress": {
+        "province": "Cartago",
+        "canton": "Cartago",
+        "district": "Oriental",
+        "neighborhood": "Pitahaya",
+        "aditionalDescription": "Residencial"
+    }
+}
+
+4) Post one client
 
 Para esta se debe usarla action POST de http con la url http://localhost:5000/client
 con un JSON un body como el anterior.

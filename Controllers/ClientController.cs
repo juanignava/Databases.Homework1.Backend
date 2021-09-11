@@ -20,10 +20,22 @@ namespace TecBankBackend.Controllers
             ClientService.GetAll();
 
         // GET client by Id action
-        [HttpGet("{id}")]
+        [HttpGet("id/{id}")]
         public ActionResult<Client> Get(int id)
         {
             var client = ClientService.Get(id);
+
+            if(client ==  null)
+                return NotFound();
+
+            return client;
+        }
+
+        // GET client by username action
+        [HttpGet("username/{username}")]
+        public ActionResult<Client> Get(string username)
+        {
+            var client = ClientService.Get(username);
 
             if(client ==  null)
                 return NotFound();
