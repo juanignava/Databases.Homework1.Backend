@@ -12,7 +12,7 @@ namespace TecBankBackend.Services
         {
             Clients = new List<Client>
             {
-                new Client {Id = 1, Username = "juanignava", Password = "1234", ClientType = "legal", MonthlyIncome = 1000, Name = new Name("Juan", "Ignacio", "Navarro", "Navarro") , Adress = new Adress("Cartago", "Cartago", "Oriental", "Pitahaya", "Residencial")}
+                new Client {id = "1", ssn = "123456", username = "juannava", password = "123", firstName = "Juan", lastName = "Navarro", address = "cartago", phoneNumber = "87175508", income = "2000", clientType = "client", token = "123"}
             };
         }
 
@@ -20,10 +20,10 @@ namespace TecBankBackend.Services
         public static List<Client> GetAll() => Clients;
 
         // method that returns the client with the given id
-        public static Client Get(int id) => Clients.FirstOrDefault(p => p.Id == id);
+        public static Client GetID(string id) => Clients.FirstOrDefault(p => p.id == id);
 
         // method that returns the client with the given username
-        public static Client Get(string username) => Clients.FirstOrDefault(p => p.Username == username);
+        public static Client GetUsername(string username) => Clients.FirstOrDefault(p => p.username == username);
 
         // method that adds the client given in the request to the clients list
         public static void Add(Client client)

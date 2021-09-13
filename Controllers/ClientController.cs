@@ -21,9 +21,9 @@ namespace TecBankBackend.Controllers
 
         // GET client by Id action
         [HttpGet("id/{id}")]
-        public ActionResult<Client> Get(int id)
+        public ActionResult<Client> GetID(string id)
         {
-            var client = ClientService.Get(id);
+            var client = ClientService.GetID(id);
 
             if(client ==  null)
                 return NotFound();
@@ -33,9 +33,9 @@ namespace TecBankBackend.Controllers
 
         // GET client by username action
         [HttpGet("username/{username}")]
-        public ActionResult<Client> Get(string username)
+        public ActionResult<Client> GetUsername(string username)
         {
-            var client = ClientService.Get(username);
+            var client = ClientService.GetUsername(username);
 
             if(client ==  null)
                 return NotFound();
