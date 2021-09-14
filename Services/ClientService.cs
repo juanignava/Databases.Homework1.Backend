@@ -8,6 +8,7 @@ namespace TecBankBackend.Services
     {
         // List where clients are stored
         static List<Client> Clients { get; }
+        static int nextId = 2;
         static ClientService() 
         {
             Clients = new List<Client>
@@ -28,6 +29,8 @@ namespace TecBankBackend.Services
         // method that adds the client given in the request to the clients list
         public static void Add(Client client)
         {
+            client.id = nextId.ToString();
+            nextId+=1;
             Clients.Add(client);
         }
     }
